@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import TreatmentCard from "../../components/TreatmentCard.astro";
+import SectionTitle from "../../components/SectionTitle.astro";
 import CtaBlock from "../../components/CtaBlock.astro";
 import { treatments } from "../../data/treatments";
 import { breadcrumbSchema, dentistSchema } from "../../data/schema";
@@ -28,16 +29,23 @@ const crumbs = [
   </section>
 
   <section class="section">
-    <div class="container card-grid">
-      {treatments.map((treatment) => (
-        <TreatmentCard
-          title={treatment.title}
-          description={treatment.shortDescription}
-          imageSrc={treatment.cardImage}
-          imageAlt={treatment.cardImageAlt}
-          href={`/tratamentos/${treatment.slug}/`}
-        />
-      ))}
+    <div class="container">
+      <SectionTitle
+        eyebrow="Tratamentos"
+        title="Tratamentos odontológicos para diferentes fases do seu cuidado"
+        text="A Odonto Levek reúne tratamentos estéticos, funcionais e reabilitadores com avaliação individual para cada paciente."
+      />
+      <div class="card-grid">
+        {treatments.map((treatment) => (
+          <TreatmentCard
+            title={treatment.title}
+            description={treatment.shortDescription}
+            imageSrc={treatment.cardImage}
+            imageAlt={treatment.cardImageAlt}
+            href={`/tratamentos/${treatment.slug}/`}
+          />
+        ))}
+      </div>
     </div>
   </section>
 

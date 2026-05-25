@@ -2,11 +2,9 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import SectionTitle from "../components/SectionTitle.astro";
-import TreatmentCard from "../components/TreatmentCard.astro";
 import VideoSection from "../components/VideoSection.astro";
 import Faq from "../components/Faq.astro";
 import CtaBlock from "../components/CtaBlock.astro";
-import { featuredTreatments } from "../data/treatments";
 import { homeFaqs } from "../data/faqs";
 import { getWhatsappLink } from "../data/siteConfig";
 import { dentistSchema, faqSchema } from "../data/schema";
@@ -46,25 +44,6 @@ const differentials = [
             <h3>{item}</h3>
             <p>Uma abordagem pensada para unir saúde, estética e previsibilidade clínica.</p>
           </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <SectionTitle
-        eyebrow="Tratamentos"
-        title="Tratamentos odontológicos para diferentes fases do seu cuidado"
-        text="A Odonto Levek reúne tratamentos estéticos, funcionais e reabilitadores com avaliação individual para cada paciente."
-      />
-      <div class="card-grid">
-        {featuredTreatments.map((treatment) => (
-          <TreatmentCard
-            title={treatment.title}
-            description={treatment.shortDescription}
-            href={`/tratamentos/${treatment.slug}/`}
-          />
         ))}
       </div>
     </div>
