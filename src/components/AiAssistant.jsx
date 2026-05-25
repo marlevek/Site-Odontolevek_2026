@@ -54,7 +54,7 @@ export default function AiAssistant() {
     const text = encodeURIComponent(
       "Olá, vim pelo site Odonto Levek e gostaria de agendar uma avaliação.",
     );
-    return `https://wa.me/?text=${text}`;
+    return `https://wa.me/554130186662?text=${text}`;
   }, []);
 
   async function sendMessage(text) {

@@ -6,7 +6,7 @@ export const siteConfig = {
   address: "R. Francisco Derosso, 2747 - Sala 12 - Xaxim",
   city: "Curitiba",
   state: "PR",
-  whatsapp: "WHATSAPP",
+  whatsapp: "554130186662",
   email: "",
   businessHours:
     "Segunda-feira: 08:00-11:30, 13:30-18:30; Terça-feira: 08:00-11:30, 13:30-18:30; Quarta-feira: 08:00-11:30; Quinta-feira: 13:30-18:30; Sexta-feira: 08:00-11:30, 13:30-18:30; Sábado: fechado; Domingo: fechado.",
@@ -25,9 +25,11 @@ export const siteConfig = {
 export function getWhatsappLink(message = siteConfig.defaultWhatsappMessage) {
   const digits = siteConfig.whatsapp.replace(/\D/g, "");
 
-  if (!digits || digits === "WHATSAPP") {
+  if (!digits) {
     return "#contato";
   }
 
-  return `https://wa.me/55${digits}?text=${encodeURIComponent(message)}`;
+  const phone = digits.startsWith("55") ? digits : `55${digits}`;
+
+  return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
