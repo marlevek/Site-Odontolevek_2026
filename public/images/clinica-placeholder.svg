@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="640" viewBox="0 0 720 640" role="img" aria-label="Placeholder para foto da clínica">
+  <rect width="720" height="640" fill="#F5F5F3"/>
+  <rect x="58" y="58" width="604" height="524" rx="10" fill="#FFFFFF" stroke="#E6E1DD"/>
+  <path d="M110 430 C190 350 250 385 318 330 C410 255 505 280 610 178" fill="none" stroke="#4A0015" stroke-width="6"/>
+  <circle cx="208" cy="220" r="58" fill="#B9975B" opacity="0.18"/>
+  <text x="360" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#111111">Foto real da clínica</text>
+  <text x="360" y="342" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#444444">Substitua este arquivo em public/images</text>
+</svg>

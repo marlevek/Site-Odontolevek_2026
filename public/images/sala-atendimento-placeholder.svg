@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" role="img" aria-label="Placeholder para sala de atendimento">
+  <rect width="720" height="480" fill="#F5F5F3"/>
+  <rect x="70" y="74" width="580" height="332" rx="8" fill="#FFFFFF" stroke="#E6E1DD"/>
+  <rect x="130" y="300" width="460" height="36" rx="18" fill="#4A0015" opacity="0.9"/>
+  <rect x="174" y="174" width="180" height="84" rx="8" fill="#E6E1DD"/>
+  <rect x="390" y="150" width="150" height="118" rx="8" fill="#B9975B" opacity="0.24"/>
+  <text x="360" y="438" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#444444">Sala de atendimento</text>
+</svg>

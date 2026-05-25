@@ -1,0 +1,26 @@
+---
+type FaqItem = { question: string; answer: string };
+type Props = {
+  items: FaqItem[];
+  title?: string;
+};
+
+const { items, title = "Perguntas frequentes" } = Astro.props;
+---
+
+<section class="section faq-section">
+  <div class="container narrow">
+    <div class="section-title section-title-center">
+      <p class="eyebrow">Dúvidas comuns</p>
+      <h2>{title}</h2>
+    </div>
+    <div class="faq-list">
+      {items.map((item) => (
+        <details>
+          <summary>{item.question}</summary>
+          <p>{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,52 @@
+---
+import { siteConfig, getWhatsappLink } from "../data/siteConfig";
+import { treatments } from "../data/treatments";
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <section>
+      <a class="brand footer-brand" href="/">
+        <img class="brand-logo brand-logo-footer" src="/images/logo_OdontoLevek.jpg" width="257" height="84" alt="" aria-hidden="true" />
+        <span class="brand-name">Odonto Levek</span>
+      </a>
+      <p>
+        Odontologia moderna, estética e cuidado humano para tratamentos planejados com atenção em cada detalhe.
+      </p>
+      <a class="button button-light" href={getWhatsappLink()} target="_blank" rel="noopener">Agendar avaliação</a>
+    </section>
+
+    <section>
+      <h2>Contato</h2>
+      <ul class="footer-list">
+        <li>{siteConfig.address}</li>
+        <li>{siteConfig.city} - {siteConfig.state}</li>
+        <li>{siteConfig.cro}</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Tratamentos</h2>
+      <ul class="footer-list">
+        {treatments.slice(0, 6).map((treatment) => (
+          <li><a href={`/tratamentos/${treatment.slug}/`}>{treatment.title}</a></li>
+        ))}
+      </ul>
+    </section>
+
+    <section>
+      <h2>Links úteis</h2>
+      <ul class="footer-list">
+        <li><a href="/sobre/">Sobre a clínica</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/contato/">Contato</a></li>
+        <li><a href="/privacidade/">Política de privacidade</a></li>
+        <li><a href={siteConfig.instagramUrl}>Instagram</a></li>
+      </ul>
+    </section>
+  </div>
+  <div class="container footer-bottom">
+    <span>© {new Date().getFullYear()} Odonto Levek. Todos os direitos reservados.</span>
+    <span>Desenvolvido por {siteConfig.developerCredit}</span>
+  </div>
+</footer>

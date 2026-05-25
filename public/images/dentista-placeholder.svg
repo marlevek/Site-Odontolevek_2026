@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="720" viewBox="0 0 620 720" role="img" aria-label="Placeholder para foto do dentista">
+  <rect width="620" height="720" fill="#FFFFFF"/>
+  <rect x="52" y="52" width="516" height="616" rx="10" fill="#F5F5F3" stroke="#E6E1DD"/>
+  <circle cx="310" cy="235" r="84" fill="#E6E1DD"/>
+  <path d="M158 602 C178 452 238 374 310 374 C382 374 442 452 462 602" fill="#FFFFFF" stroke="#4A0015" stroke-width="5"/>
+  <text x="310" y="646" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#111111">Foto do profissional</text>
+</svg>

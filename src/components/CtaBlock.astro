@@ -1,0 +1,27 @@
+---
+import { getWhatsappLink } from "../data/siteConfig";
+
+type Props = {
+  title?: string;
+  text?: string;
+};
+
+const {
+  title = "Agende sua avaliação",
+  text = "Converse com a Odonto Levek pelo WhatsApp e receba orientação inicial para marcar sua consulta.",
+} = Astro.props;
+---
+
+<section class="cta-block section">
+  <div class="container cta-inner">
+    <div>
+      <p class="eyebrow">Atendimento inicial</p>
+      <h2>{title}</h2>
+      <p>{text}</p>
+    </div>
+    <div class="button-row">
+      <a class="button" href={getWhatsappLink()} target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      <a class="button button-secondary" href="/contato/">Ver contato</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,72 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import { siteConfig, getWhatsappLink } from "../data/siteConfig";
+import { breadcrumbSchema, dentistSchema } from "../data/schema";
+
+const crumbs = [{ label: "Contato", href: "/contato/" }];
+---
+
+<BaseLayout
+  title="Contato | Odonto Levek"
+  description="Entre em contato com a Odonto Levek pelo WhatsApp, e-mail ou formulário visual para solicitar sua avaliação."
+  schema={[dentistSchema(), breadcrumbSchema([{ label: "Início", href: "/" }, ...crumbs])]}
+>
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">Contato</p>
+      <h1>Agende sua avaliação</h1>
+      <p>O WhatsApp é o caminho mais rápido para solicitar horários e tirar dúvidas iniciais.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-grid">
+      <aside class="contact-card">
+        <h2>Informações de contato</h2>
+        <ul>
+          <li><strong>WhatsApp:</strong> {siteConfig.whatsapp}</li>
+          <li><strong>Endereço:</strong> {siteConfig.address}</li>
+          <li><strong>Cidade:</strong> {siteConfig.city} - {siteConfig.state}</li>
+          <li><strong>CRO:</strong> {siteConfig.cro}</li>
+        </ul>
+        <div class="button-row" style="margin-top: 22px;">
+          <a class="button" href={getWhatsappLink()} target="_blank" rel="noopener">WhatsApp</a>
+          <a class="button button-secondary" href={siteConfig.googleMapsUrl} target="_blank" rel="noopener">Google Maps</a>
+        </div>
+      </aside>
+
+      <form class="contact-form" action="#" method="post">
+        <!-- Formulário visual. Depois pode ser integrado com Formspree, PHP mail ou backend próprio. -->
+        <div class="field">
+          <label for="nome">Nome</label>
+          <input id="nome" name="nome" type="text" autocomplete="name" />
+        </div>
+        <div class="field">
+          <label for="telefone">Telefone</label>
+          <input id="telefone" name="telefone" type="tel" autocomplete="tel" />
+        </div>
+        <div class="field">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem"></textarea>
+        </div>
+        <button class="button" type="button">Envio será integrado depois</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="section map-section">
+    <div class="container">
+      <div class="map-card">
+        <iframe
+          src={siteConfig.googleMapsEmbedUrl}
+          title="Mapa com a localização da Odonto Levek"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

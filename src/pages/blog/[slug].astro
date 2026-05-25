@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import CtaBlock from "../../components/CtaBlock.astro";
+import { blogPosts, getBlogPostBySlug } from "../../data/blogPosts";
+import { breadcrumbSchema, dentistSchema } from "../../data/schema";
+
+export function getStaticPaths() {
+  return blogPosts.map((post) => ({
+    params: { slug: post.slug },
+  }));
+}
+
+const post = getBlogPostBySlug(Astro.params.slug ?? "");
+
+if (!post) {
+  throw new Error("Post não encontrado.");
+}
+
+const crumbs = [
+  { label: "Blog", href: "/blog/" },
+  { label: post.title, href: `/blog/${post.slug}/` },
+];
+---
+
+<BaseLayout
+  title={post.metaTitle}
+  description={post.metaDescription}
+  canonical={`/blog/${post.slug}/`}
+  schema={[dentistSchema(), breadcrumbSchema([{ label: "Início", href: "/" }, ...crumbs])]}
+>
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">Blog</p>
+      <h1>{post.title}</h1>
+      <p>{post.excerpt}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <article class="container narrow article-content">
+      {post.content.map((block) => (
+        <section>
+          <h2>{block.heading}</h2>
+          {block.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        </section>
+      ))}
+    </article>
+  </section>
+
+  <CtaBlock />
+</BaseLayout>

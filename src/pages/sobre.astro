@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import CtaBlock from "../components/CtaBlock.astro";
+import { siteConfig } from "../data/siteConfig";
+import { breadcrumbSchema, dentistSchema } from "../data/schema";
+
+const crumbs = [{ label: "Sobre", href: "/sobre/" }];
+---
+
+<BaseLayout
+  title="Sobre a Odonto Levek | Clínica odontológica"
+  description="Conheça a proposta de cuidado da Odonto Levek: odontologia com planejamento, estética, tecnologia e atendimento humano."
+  schema={[dentistSchema(), breadcrumbSchema([{ label: "Início", href: "/" }, ...crumbs])]}
+>
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">Sobre</p>
+      <h1>Odontologia com presença, técnica e clareza</h1>
+      <p>
+        A Odonto Levek foi pensada para oferecer uma experiência de cuidado odontológico moderna, acolhedora e responsável.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split-section">
+      <div>
+        <img class="about-photo" src="/images/Imagens_Clinica/IMG_20200813_103136457.jpg" width="4632" height="2608" alt={`Recepção da clínica ${siteConfig.clinicName}`} loading="lazy" />
+      </div>
+      <div class="article-content">
+        <section>
+          <h2>Um cuidado que começa pela escuta</h2>
+          <p>
+            Antes de qualquer procedimento, existe uma pessoa com dúvidas, expectativas e histórico próprio. Por isso, a avaliação é conduzida com atenção e explicação simples.
+          </p>
+        </section>
+        <section>
+          <h2>Planejamento antes da execução</h2>
+          <p>
+            Tratamentos estéticos, reabilitadores e funcionais precisam respeitar saúde bucal, anatomia e rotina do paciente. A clínica organiza cada etapa para que o paciente entenda o caminho indicado.
+          </p>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <CtaBlock />
+</BaseLayout>

@@ -1,0 +1,106 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import Faq from "../../components/Faq.astro";
+import CtaBlock from "../../components/CtaBlock.astro";
+import { treatments, getTreatmentBySlug } from "../../data/treatments";
+import { breadcrumbSchema, dentistSchema, faqSchema } from "../../data/schema";
+
+export function getStaticPaths() {
+  return treatments.map((treatment) => ({
+    params: { slug: treatment.slug },
+  }));
+}
+
+const treatment = getTreatmentBySlug(Astro.params.slug ?? "");
+
+if (!treatment) {
+  throw new Error("Tratamento não encontrado.");
+}
+
+const related = treatment.relatedTreatments
+  .map((slug) => getTreatmentBySlug(slug))
+  .filter(Boolean);
+
+const crumbs = [
+  { label: "Tratamentos", href: "/tratamentos/" },
+  { label: treatment.title, href: `/tratamentos/${treatment.slug}/` },
+];
+---
+
+<BaseLayout
+  title={treatment.metaTitle}
+  description={treatment.metaDescription}
+  canonical={`/tratamentos/${treatment.slug}/`}
+  schema={[
+    dentistSchema(),
+    breadcrumbSchema([{ label: "Início", href: "/" }, ...crumbs]),
+    faqSchema(treatment.faqs),
+  ]}
+>
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">Tratamento</p>
+      <h1>{treatment.h1}</h1>
+      <p>{treatment.intro}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content-grid">
+      <aside class="content-nav" aria-label="Navegação da página">
+        <h2>Nesta página</h2>
+        <ul>
+          <li><a href="#indicacoes">Para quem é indicado</a></li>
+          <li><a href="#como-funciona">Como funciona</a></li>
+          <li><a href="#beneficios">Benefícios</a></li>
+          <li><a href="#cuidados">Cuidados importantes</a></li>
+          <li><a href="#relacionados">Tratamentos relacionados</a></li>
+        </ul>
+      </aside>
+
+      <article class="article-content">
+        <section id="indicacoes">
+          <h2>Para quem é indicado</h2>
+          <ul>
+            {treatment.indications.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section id="como-funciona">
+          <h2>Como funciona</h2>
+          <ol>
+            {treatment.steps.map((item) => <li>{item}</li>)}
+          </ol>
+        </section>
+
+        <section id="beneficios">
+          <h2>Benefícios</h2>
+          <ul>
+            {treatment.benefits.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section id="cuidados">
+          <h2>Cuidados importantes</h2>
+          <ul>
+            {treatment.care.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+
+        <section id="relacionados">
+          <h2>Tratamentos relacionados</h2>
+          <ul>
+            {related.map((item) => (
+              <li><a class="whatsapp-inline" href={`/tratamentos/${item.slug}/`}>{item.title}</a></li>
+            ))}
+          </ul>
+        </section>
+      </article>
+    </div>
+  </section>
+
+  <Faq items={treatment.faqs} />
+  <CtaBlock title={`Agende uma avaliação para ${treatment.title.toLowerCase()}`} />
+</BaseLayout>

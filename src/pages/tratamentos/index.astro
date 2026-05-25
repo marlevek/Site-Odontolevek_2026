@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import TreatmentCard from "../../components/TreatmentCard.astro";
+import CtaBlock from "../../components/CtaBlock.astro";
+import { treatments } from "../../data/treatments";
+import { breadcrumbSchema, dentistSchema } from "../../data/schema";
+
+const crumbs = [
+  { label: "Tratamentos", href: "/tratamentos/" },
+];
+---
+
+<BaseLayout
+  title="Tratamentos odontológicos | Odonto Levek"
+  description="Conheça os tratamentos odontológicos da Odonto Levek: implantes, próteses, lentes, ortodontia, harmonização orofacial, endodontia e mais."
+  schema={[dentistSchema(), breadcrumbSchema([{ label: "Início", href: "/" }, ...crumbs])]}
+>
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">Tratamentos</p>
+      <h1>Tratamentos odontológicos completos</h1>
+      <p>
+        Veja as principais áreas de atendimento da Odonto Levek e acesse páginas específicas com explicações, cuidados e dúvidas frequentes.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container card-grid">
+      {treatments.map((treatment) => (
+        <TreatmentCard
+          title={treatment.title}
+          description={treatment.shortDescription}
+          imageSrc={treatment.cardImage}
+          imageAlt={treatment.cardImageAlt}
+          href={`/tratamentos/${treatment.slug}/`}
+        />
+      ))}
+    </div>
+  </section>
+
+  <CtaBlock />
+</BaseLayout>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="405" viewBox="0 0 720 405" role="img" aria-label="Poster de vídeo da clínica">
+  <rect width="720" height="405" fill="#111111"/>
+  <rect x="56" y="50" width="608" height="305" rx="8" fill="#1f1f1f" stroke="#3a3a3a"/>
+  <circle cx="360" cy="202" r="58" fill="#4A0015"/>
+  <path d="M346 172 L346 232 L398 202 Z" fill="#FFFFFF"/>
+  <text x="360" y="318" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">Vídeo da clínica</text>
+</svg>

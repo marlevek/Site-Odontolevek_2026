@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import { breadcrumbSchema } from "../data/schema";
+
+const crumbs = [{ label: "Política de privacidade", href: "/privacidade/" }];
+---
+
+<BaseLayout
+  title="Política de privacidade | Odonto Levek"
+  description="Política de privacidade da Odonto Levek com informações sobre dados de contato, cookies e atendimento inicial."
+  schema={breadcrumbSchema([{ label: "Início", href: "/" }, ...crumbs])}
+>
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">Privacidade</p>
+      <h1>Política de privacidade</h1>
+      <p>Esta página explica, de forma simples, como dados enviados pelo site podem ser utilizados.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <article class="container narrow article-content">
+      <section>
+        <h2>Dados de contato</h2>
+        <p>Quando você entra em contato pelo WhatsApp, formulário ou assistente, pode informar nome, telefone e mensagem para retorno da clínica.</p>
+      </section>
+      <section>
+        <h2>Assistente virtual</h2>
+        <p>O assistente virtual serve para atendimento inicial. Evite enviar dados sensíveis de saúde. Ele não substitui avaliação odontológica presencial.</p>
+      </section>
+      <section>
+        <h2>Cookies e métricas</h2>
+        <p>O site está preparado para Google Analytics 4, mas o ID deve ser configurado em `src/data/siteConfig.ts` quando a clínica decidir ativar a medição.</p>
+      </section>
+    </article>
+  </section>
+</BaseLayout>

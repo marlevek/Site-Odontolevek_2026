@@ -1,0 +1,25 @@
+---
+type Props = {
+  title: string;
+  description: string;
+  href: string;
+  imageSrc?: string;
+  imageAlt?: string;
+};
+
+const { title, description, href, imageSrc, imageAlt = title } = Astro.props;
+---
+
+<article class="treatment-card">
+  {imageSrc && (
+    <div class="treatment-card-media">
+      <span>{title}</span>
+      <img src={imageSrc} alt={imageAlt} loading="lazy" onerror="this.style.display='none'" />
+    </div>
+  )}
+  <div class="treatment-card-body">
+    <h3>{title}</h3>
+    <p>{description}</p>
+  </div>
+  <a href={href} aria-label={`Conhecer ${title}`}>Conhecer tratamento</a>
+</article>

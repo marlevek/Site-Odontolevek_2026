@@ -1,0 +1,91 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import TreatmentCard from "../components/TreatmentCard.astro";
+import VideoSection from "../components/VideoSection.astro";
+import Faq from "../components/Faq.astro";
+import CtaBlock from "../components/CtaBlock.astro";
+import { featuredTreatments } from "../data/treatments";
+import { homeFaqs } from "../data/faqs";
+import { getWhatsappLink } from "../data/siteConfig";
+import { dentistSchema, faqSchema } from "../data/schema";
+
+const differentials = [
+  "Atendimento humanizado",
+  "Planejamento individual",
+  "Odontologia estética e funcional",
+  "Estrutura para tratamentos completos",
+  "Tecnologia e precisão",
+];
+---
+
+<BaseLayout
+  title="Odonto Levek | Odontologia moderna, estética e cuidado"
+  description="Clínica odontológica com foco em estética, implantes, próteses, ortodontia, endodontia e harmonização orofacial."
+  schema={[dentistSchema(), faqSchema(homeFaqs)]}
+>
+  <Hero
+    eyebrow="Odonto Levek"
+    title="Odontologia moderna, estética e cuidado em cada detalhe"
+    text="Tratamentos odontológicos completos com atenção individualizada, planejamento cuidadoso e foco na saúde do seu sorriso."
+    primaryHref={getWhatsappLink()}
+    secondaryHref="/tratamentos/"
+  />
+
+  <section class="section">
+    <div class="container">
+      <SectionTitle
+        eyebrow="Diferenciais"
+        title="Cuidado técnico, clareza no planejamento e acolhimento desde a avaliação"
+        text="Cada tratamento começa com escuta, exame cuidadoso e explicação honesta sobre possibilidades, etapas e cuidados."
+      />
+      <div class="feature-grid">
+        {differentials.map((item) => (
+          <article class="feature-item">
+            <h3>{item}</h3>
+            <p>Uma abordagem pensada para unir saúde, estética e previsibilidade clínica.</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionTitle
+        eyebrow="Tratamentos"
+        title="Tratamentos odontológicos para diferentes fases do seu cuidado"
+        text="A Odonto Levek reúne tratamentos estéticos, funcionais e reabilitadores com avaliação individual para cada paciente."
+      />
+      <div class="card-grid">
+        {featuredTreatments.map((treatment) => (
+          <TreatmentCard
+            title={treatment.title}
+            description={treatment.shortDescription}
+            href={`/tratamentos/${treatment.slug}/`}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split-section">
+      <div>
+        <p class="eyebrow">Por que escolher</p>
+        <h2>Uma clínica para quem valoriza explicação clara e acompanhamento próximo</h2>
+      </div>
+      <div class="split-panel">
+        <p>
+          O cuidado odontológico precisa ser bonito, mas também precisa ser seguro, funcional e bem explicado.
+          A Odonto Levek trabalha com planejamento responsável, evitando promessas fáceis e priorizando decisões clínicas bem orientadas.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <VideoSection />
+  <Faq items={homeFaqs} />
+  <CtaBlock />
+</BaseLayout>

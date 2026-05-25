@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import { blogPosts } from "../../data/blogPosts";
+import { breadcrumbSchema, dentistSchema } from "../../data/schema";
+
+const crumbs = [{ label: "Blog", href: "/blog/" }];
+---
+
+<BaseLayout
+  title="Blog odontológico | Odonto Levek"
+  description="Conteúdos educativos sobre implantes, próteses, tratamento de canal e cuidados odontológicos."
+  schema={[dentistSchema(), breadcrumbSchema([{ label: "Início", href: "/" }, ...crumbs])]}
+>
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <Breadcrumb items={crumbs} />
+      <p class="eyebrow">Blog</p>
+      <h1>Conteúdos para cuidar melhor do seu sorriso</h1>
+      <p>Informações educativas para orientar sua decisão e incentivar uma avaliação profissional no momento certo.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container post-list">
+      {blogPosts.map((post) => (
+        <article class="post-card">
+          <p class="eyebrow">{new Date(post.date).toLocaleDateString("pt-BR")}</p>
+          <h2>{post.title}</h2>
+          <p>{post.excerpt}</p>
+          <a href={`/blog/${post.slug}/`}>Ler artigo</a>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

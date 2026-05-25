@@ -1,0 +1,38 @@
+---
+type Props = {
+  eyebrow?: string;
+  title: string;
+  text: string;
+  primaryHref?: string;
+  primaryLabel?: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+};
+
+const {
+  eyebrow,
+  title,
+  text,
+  primaryHref,
+  primaryLabel = "Agendar avaliação",
+  secondaryHref,
+  secondaryLabel = "Conhecer tratamentos",
+} = Astro.props;
+---
+
+<section class="hero section">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+      <h1>{title}</h1>
+      <p>{text}</p>
+      <div class="button-row">
+        {primaryHref && <a class="button" href={primaryHref} target={primaryHref.startsWith("http") ? "_blank" : undefined} rel="noopener">{primaryLabel}</a>}
+        {secondaryHref && <a class="button button-secondary" href={secondaryHref}>{secondaryLabel}</a>}
+      </div>
+    </div>
+    <div class="hero-media" aria-label="Foto do consultório Odonto Levek">
+      <img src="/images/Imagens_Clinica/Consutlorio_Luis.jpeg" width="1032" height="774" alt="Consultório odontológico da Odonto Levek" loading="eager" fetchpriority="high" />
+    </div>
+  </div>
+</section>
