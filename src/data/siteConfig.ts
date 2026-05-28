@@ -2,7 +2,7 @@ export const siteConfig = {
   siteUrl: "https://odontolevek.com.br",
   clinicName: "Odonto Levek",
   dentistName: "NOME_DENTISTA",
-  cro: "CRO",
+  cro: "8323",
   address: "R. Francisco Derosso, 2747 - Sala 12 - Xaxim",
   city: "Curitiba",
   state: "PR",
@@ -10,7 +10,7 @@ export const siteConfig = {
   email: "",
   businessHours:
     "Segunda-feira: 08:00-11:30, 13:30-18:30; Terça-feira: 08:00-11:30, 13:30-18:30; Quarta-feira: 08:00-11:30; Quinta-feira: 13:30-18:30; Sexta-feira: 08:00-11:30, 13:30-18:30; Sábado: fechado; Domingo: fechado.",
-  instagramUrl: "INSTAGRAM",
+  instagramUrl: "https://www.instagram.com/odontolevek/",
   googleMapsUrl:
     "https://www.google.com/maps/search/?api=1&query=Odonto%20Levek&query_place_id=ChIJEY0ILBL73JQRhTsaIGmRCNA",
   googleMapsEmbedUrl:

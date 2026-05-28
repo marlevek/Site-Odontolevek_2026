@@ -1,13 +1,11 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import AiAssistant from "../components/AiAssistant.jsx";
 import { siteConfig } from "../data/siteConfig";
 import "../styles/global.css";
 import "../styles/layout.css";
 import "../styles/components.css";
 import "../styles/pages.css";
-import "../styles/chatbot.css";
 
 type Props = {
   title: string;
@@ -84,6 +82,6 @@ const schemaItems = Array.isArray(schema) ? schema : schema ? [schema] : [];
       <slot />
     </main>
     <Footer />
-    <AiAssistant client:idle />
+    <script src="https://api.codertec.com.br/widget.js?v=2" data-tenant="odontolevek" data-bottom="180" defer></script>
   </body>
 </html>

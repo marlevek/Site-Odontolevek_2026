@@ -70,17 +70,15 @@
 }
 
 .contact-grid {
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 34px;
+  max-width: 760px;
 }
 
-.contact-card,
-.contact-form {
+.contact-card {
   border: 1px solid var(--color-border);
   border-radius: 8px;
   padding: 28px;
   background: var(--color-surface);
+  box-shadow: var(--shadow-soft);
 }
 
 .contact-card ul {
@@ -88,11 +86,6 @@
   gap: 12px;
   margin-top: 18px;
   list-style: none;
-}
-
-.contact-form {
-  display: grid;
-  gap: 16px;
 }
 
 .map-section {
@@ -112,30 +105,6 @@
   width: 100%;
   min-height: 420px;
   border: 0;
-}
-
-.field {
-  display: grid;
-  gap: 7px;
-}
-
-.field label {
-  color: var(--color-black);
-  font-weight: 750;
-}
-
-.field input,
-.field textarea {
-  width: 100%;
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
-  padding: 12px 14px;
-  background: #fff;
-}
-
-.field textarea {
-  min-height: 140px;
-  resize: vertical;
 }
 
 .post-list {
@@ -159,8 +128,7 @@
 }
 
 @media (max-width: 880px) {
-  .content-grid,
-  .contact-grid {
+  .content-grid {
     grid-template-columns: 1fr;
   }
 

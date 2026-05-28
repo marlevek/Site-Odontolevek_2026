@@ -3,7 +3,7 @@
   top: 0;
   z-index: 50;
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(112, 116, 117, 0.96);
+  background: #707475;
   backdrop-filter: blur(16px);
 }
 
@@ -157,7 +157,7 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     padding: 16px;
-    background: rgba(112, 116, 117, 0.98);
+    background: #707475;
     box-shadow: var(--shadow-soft);
   }
 
