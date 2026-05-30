@@ -1,4 +1,126 @@
 ---
+const clinicPhotos = [
+  {
+    className: "gallery-featured",
+    src: "/images/Imagens_Clinica/consultorio_2.jpg",
+    width: 1654,
+    height: 1240,
+    alt: "Consultório odontológico da Odonto Levek",
+    caption: "Consultório odontológico",
+  },
+  {
+    src: "/images/Imagens_Clinica/consultorio_harmonizacao.jpg",
+    width: 1808,
+    height: 1356,
+    alt: "Consultório de harmonização orofacial da Odonto Levek",
+    caption: "Consultório de harmonização orofacial",
+  },
+  {
+    src: "/images/Imagens_Clinica/Consutlorio_Luis.jpeg",
+    width: 1032,
+    height: 774,
+    alt: "Consultório odontológico da Odonto Levek",
+    caption: "Consultório odontológico",
+  },
+  {
+    src: "/images/Imagens_Clinica/ante_sala_consultórios.jpg",
+    width: 2106,
+    height: 1579,
+    alt: "Ante-sala de atendimento da Odonto Levek",
+    caption: "Ante-sala de atendimento",
+  },
+  {
+    src: "/images/Imagens_Clinica/scanner_digital.jpg",
+    width: 2130,
+    height: 1597,
+    alt: "Scanner digital utilizado na clínica Odonto Levek",
+    caption: "Scanner digital",
+  },
+  {
+    src: "/images/Imagens_Clinica/IMG_20200813_102956071.jpg",
+    width: 4632,
+    height: 2608,
+    alt: "Sala de atendimento odontológico da Odonto Levek",
+    caption: "Sala de atendimento",
+  },
+  {
+    src: "/images/Imagens_Clinica/IMG_20200813_103050055.jpg",
+    width: 2608,
+    height: 4632,
+    alt: "Espaço de esterilização da Odonto Levek",
+    caption: "Esterilização",
+  },
+  {
+    src: "/images/Imagens_Clinica/IMG_20200813_103136457.jpg",
+    width: 4632,
+    height: 2608,
+    alt: "Recepção da clínica Odonto Levek",
+    caption: "Recepção",
+  },
+  {
+    src: "/images/Imagens_Clinica/IMG_20200813_103222184.jpg",
+    width: 4632,
+    height: 2608,
+    alt: "Ambiente interno da clínica Odonto Levek",
+    caption: "Ambiente interno",
+  },
+  {
+    src: "/images/Imagens_Clinica/IMG_20200813_103325513.jpg",
+    width: 2608,
+    height: 4632,
+    alt: "Banheiro da Odonto Levek",
+    caption: "Banheiro",
+  },
+  {
+    src: "/images/Imagens_Clinica/IMG_20200813_103624855.jpg",
+    width: 4632,
+    height: 2608,
+    alt: "Entrada da Odonto Levek",
+    caption: "Entrada",
+  },
+  {
+    src: "/images/Imagens_Clinica/IMG_20200813_103733151.jpg",
+    width: 4632,
+    height: 2608,
+    alt: "Fachada da Odonto Levek",
+    caption: "Fachada",
+  },
+  {
+    src: "/images/Imagens_Clinica/IMG_20200813_103922517.jpg",
+    width: 4632,
+    height: 2608,
+    alt: "Recepção e sala de espera da Odonto Levek",
+    caption: "Sala de espera",
+  },
+  {
+    src: "/images/Imagens_Clinica/IMG_20200813_104753372.jpg",
+    width: 4632,
+    height: 2608,
+    alt: "Ambiente climatizado da Odonto Levek",
+    caption: "Ambientes climatizados",
+  },
+  {
+    src: "/images/Imagens_Clinica/IMG_20200813_105127451.jpg",
+    width: 4632,
+    height: 2608,
+    alt: "Sala clínica da Odonto Levek",
+    caption: "Sala clínica",
+  },
+  {
+    src: "/images/Imagens_Clinica/IMG_20200813_105145703.jpg",
+    width: 4632,
+    height: 2608,
+    alt: "Detalhe do consultório odontológico da Odonto Levek",
+    caption: "Detalhe do consultório",
+  },
+  {
+    src: "/images/Imagens_Clinica/estaciionamento.jpg",
+    width: 1381,
+    height: 1036,
+    alt: "Estacionamento amplo próximo à Odonto Levek",
+    caption: "Estacionamento amplo",
+  },
+];
 ---
 
 <section class="section media-section">
@@ -7,14 +129,75 @@
       <p class="eyebrow">Clínica</p>
       <h2>Um espaço preparado para cuidar do seu sorriso com tranquilidade</h2>
       <p>
-        Ambientes planejados para receber cada paciente com conforto, higiene e uma rotina de atendimento organizada.
+        Ambientes planejados para receber cada paciente com conforto, higiene, tecnologia e uma rotina de atendimento organizada.
       </p>
     </div>
-    <div class="clinic-gallery" aria-label="Fotos da clínica Odonto Levek">
-      <img class="gallery-featured" src="/images/Imagens_Clinica/IMG_20200813_102956071.jpg" width="4632" height="2608" alt="Sala de atendimento odontológico da Odonto Levek" loading="lazy" />
-      <img src="/images/Imagens_Clinica/IMG_20200813_103733151.jpg" width="4632" height="2608" alt="Fachada da Odonto Levek" loading="lazy" />
-      <img src="/images/Imagens_Clinica/IMG_20200813_103222184.jpg" width="4632" height="2608" alt="Ambiente interno da clínica Odonto Levek" loading="lazy" />
-      <img src="/images/Imagens_Clinica/IMG_20200813_103325513.jpg" width="2608" height="4632" alt="Espaço de apoio clínico da Odonto Levek" loading="lazy" />
+    <div class="clinic-slider" data-clinic-slider aria-label="Fotos da clínica Odonto Levek">
+      <div class="clinic-slider-track" data-clinic-track>
+        {clinicPhotos.map((photo, index) => (
+          <figure class="clinic-slide" data-clinic-slide>
+            <img
+              src={photo.src}
+              width={photo.width}
+              height={photo.height}
+              alt={photo.alt}
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>{photo.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+      <button class="slider-control slider-control-prev" type="button" data-clinic-prev aria-label="Foto anterior">
+        <span aria-hidden="true">‹</span>
+      </button>
+      <button class="slider-control slider-control-next" type="button" data-clinic-next aria-label="Próxima foto">
+        <span aria-hidden="true">›</span>
+      </button>
+      <div class="slider-dots" aria-label="Selecionar foto">
+        {clinicPhotos.map((photo, index) => (
+          <button
+            class={index === 0 ? "is-active" : undefined}
+            type="button"
+            data-clinic-dot={index}
+            aria-label={`Ver foto ${index + 1}: ${photo.caption}`}
+            aria-current={index === 0 ? "true" : undefined}
+          ></button>
+        ))}
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+  const sliders = document.querySelectorAll("[data-clinic-slider]");
+
+  sliders.forEach((slider) => {
+    const track = slider.querySelector("[data-clinic-track]");
+    const slides = Array.from(slider.querySelectorAll("[data-clinic-slide]"));
+    const dots = Array.from(slider.querySelectorAll("[data-clinic-dot]"));
+    const prev = slider.querySelector("[data-clinic-prev]");
+    const next = slider.querySelector("[data-clinic-next]");
+    let activeIndex = 0;
+
+    function setActive(index) {
+      activeIndex = (index + slides.length) % slides.length;
+      if (track) {
+        track.style.transform = `translateX(-${activeIndex * 100}%)`;
+      }
+      dots.forEach((dot, dotIndex) => {
+        const isActive = dotIndex === activeIndex;
+        dot.classList.toggle("is-active", isActive);
+        dot.setAttribute("aria-current", isActive ? "true" : "false");
+      });
+    }
+
+    function showSlide(index) {
+      setActive(index);
+    }
+
+    prev?.addEventListener("click", () => showSlide(activeIndex - 1));
+    next?.addEventListener("click", () => showSlide(activeIndex + 1));
+    dots.forEach((dot, index) => dot.addEventListener("click", () => showSlide(index)));
+  });
+</script>

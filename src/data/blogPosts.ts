@@ -10,17 +10,27 @@ export const blogPosts = [
     date: "2026-05-21",
     content: [
       {
-        heading: "O pós-operatório merece atenção",
+        heading: "A importância dos cuidados após o implante",
         paragraphs: [
-          "Após a instalação de um implante dentário, o cuidado nos primeiros dias ajuda na recuperação e reduz desconfortos. As orientações podem variar conforme o procedimento realizado, por isso a recomendação do dentista deve ser sempre seguida.",
-          "Repouso relativo, alimentação adequada e higiene cuidadosa costumam fazer parte das recomendações iniciais.",
+          "Após a colocação de um implante dentário, alguns cuidados no pós-operatório são importantes para favorecer a recuperação e evitar complicações.",
         ],
       },
       {
-        heading: "Higiene e alimentação",
+        heading: "Repouso, alimentação e higiene",
         paragraphs: [
-          "A higienização deve ser feita com delicadeza, evitando trauma na região operada. Alimentos muito duros ou quentes podem ser contraindicados no início, dependendo do caso.",
-          "Se houver dor intensa, sangramento persistente, febre ou inchaço importante, procure atendimento odontológico imediatamente.",
+          "Nos primeiros dias, é comum que o dentista oriente repouso relativo, alimentação mais leve e atenção especial à higiene da região operada. A limpeza deve ser feita com cuidado, sem traumatizar o local, seguindo sempre as recomendações recebidas no consultório.",
+        ],
+      },
+      {
+        heading: "Alimentos que exigem atenção",
+        paragraphs: [
+          "Também é importante evitar alimentos muito duros, muito quentes ou que possam machucar a área do procedimento, principalmente na fase inicial da cicatrização.",
+        ],
+      },
+      {
+        heading: "Sinais de alerta no pós-operatório",
+        paragraphs: [
+          "Caso ocorram dor intensa, sangramento persistente, febre, mau cheiro ou inchaço importante, o paciente deve procurar atendimento odontológico para avaliação.",
         ],
       },
     ],
@@ -28,24 +38,35 @@ export const blogPosts = [
   {
     slug: "quando-procurar-um-dentista-para-tratamento-de-canal",
     title: "Quando procurar um dentista para tratamento de canal?",
-    metaTitle: "Quando procurar tratamento de canal | Odonto Levek",
+    metaTitle: "Quando procurar um dentista para tratamento de canal?",
     metaDescription:
-      "Dor persistente, sensibilidade e inchaço podem indicar necessidade de avaliação para tratamento de canal.",
+      "Entenda os principais sinais que indicam a necessidade de avaliação odontológica para tratamento de canal e saiba quando procurar atendimento.",
     excerpt:
-      "Entenda sinais que pedem avaliação odontológica e por que não adiar o cuidado.",
+      "Entenda os principais sinais que indicam a necessidade de avaliação odontológica para tratamento de canal.",
     date: "2026-05-21",
     content: [
       {
-        heading: "Dor persistente não deve ser ignorada",
+        heading: "Dor persistente merece avaliação",
         paragraphs: [
-          "A endodontia, ou tratamento de canal, pode ser necessária quando a parte interna do dente está inflamada ou infectada. Dor espontânea, sensibilidade intensa e incômodo ao mastigar são sinais que merecem avaliação.",
-          "Apenas o dentista pode confirmar a necessidade do tratamento depois do exame clínico e, quando indicado, de exames de imagem.",
+          "O tratamento de canal pode ser indicado quando a parte interna do dente, chamada polpa, está inflamada ou infectada. Dor espontânea, sensibilidade intensa ao frio ou ao calor e incômodo ao mastigar são sinais que não devem ser ignorados.",
         ],
       },
       {
-        heading: "Sinais de urgência",
+        heading: "O diagnóstico deve ser feito pelo dentista",
         paragraphs: [
-          "Inchaço, febre, trauma, sangramento ou dor intensa exigem atendimento odontológico imediato. Não se automedique sem orientação profissional.",
+          "Mesmo quando os sintomas parecem claros, somente o dentista pode confirmar a necessidade do tratamento após avaliação clínica. Quando necessário, exames de imagem também podem ser solicitados para analisar melhor a condição do dente.",
+        ],
+      },
+      {
+        heading: "Não adie o cuidado",
+        paragraphs: [
+          "Adiar a consulta pode agravar o problema, aumentar o desconforto e dificultar o tratamento. Quanto antes o caso for avaliado, maiores são as chances de preservar o dente e evitar complicações.",
+        ],
+      },
+      {
+        heading: "Sinais que exigem atendimento imediato",
+        paragraphs: [
+          "Inchaço, febre, trauma, sangramento, pus ou dor intensa exigem atendimento odontológico o quanto antes. Evite a automedicação e procure orientação profissional.",
         ],
       },
     ],
@@ -53,24 +74,35 @@ export const blogPosts = [
   {
     slug: "diferenca-entre-protese-e-implante-dentario",
     title: "Diferença entre prótese e implante dentário",
-    metaTitle: "Prótese ou implante dentário: diferenças | Odonto Levek",
+    metaTitle: "Diferença entre prótese e implante dentário",
     metaDescription:
-      "Entenda a diferença entre prótese e implante dentário e por que a avaliação profissional define o melhor caminho.",
+      "Entenda a diferença entre prótese e implante dentário, quando eles podem ser usados juntos e por que a avaliação odontológica é importante.",
     excerpt:
-      "Implantes e próteses podem atuar juntos, mas têm funções diferentes na reabilitação oral.",
+      "Entenda quando implante e prótese podem ser usados juntos e por que a avaliação odontológica é importante.",
     date: "2026-05-21",
     content: [
       {
-        heading: "Implante e prótese não são a mesma coisa",
+        heading: "Implante e prótese têm funções diferentes",
         paragraphs: [
-          "O implante dentário funciona como uma raiz artificial instalada no osso. A prótese é a parte que repõe a coroa ou um conjunto de dentes e pode ser fixa, removível ou apoiada sobre implantes.",
-          "Em muitos planejamentos, os dois trabalham juntos para recuperar mastigação e estética.",
+          "Embora muitas pessoas confundam os dois termos, implante dentário e prótese não são a mesma coisa. O implante funciona como uma raiz artificial instalada no osso, enquanto a prótese é a estrutura que repõe a parte visível do dente ou um conjunto de dentes.",
         ],
       },
       {
-        heading: "A escolha depende do caso",
+        heading: "Quando os dois trabalham juntos",
         paragraphs: [
-          "Quantidade de osso, saúde gengival, número de dentes perdidos, hábitos e expectativas influenciam a decisão. Por isso, a avaliação presencial é indispensável.",
+          "Em muitos tratamentos, o implante e a prótese são usados em conjunto. O implante serve como base de sustentação, e a prótese é fixada sobre ele para recuperar a mastigação, a estética e a função dos dentes perdidos.",
+        ],
+      },
+      {
+        heading: "Tipos de prótese dentária",
+        paragraphs: [
+          "A prótese pode ser fixa, removível, total, parcial ou apoiada sobre implantes. A escolha depende da quantidade de dentes ausentes, da condição da boca e do planejamento indicado pelo dentista.",
+        ],
+      },
+      {
+        heading: "A escolha depende da avaliação",
+        paragraphs: [
+          "Quantidade de osso, saúde da gengiva, número de dentes perdidos, hábitos do paciente e expectativas estéticas influenciam na decisão. Por isso, a avaliação presencial é essencial para definir o tratamento mais adequado.",
         ],
       },
     ],

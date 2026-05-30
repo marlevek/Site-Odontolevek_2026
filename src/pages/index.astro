@@ -16,6 +16,39 @@ const differentials = [
   "Estrutura para tratamentos completos",
   "Tecnologia e precisão",
 ];
+
+const team = [
+  {
+    role: "Ortodontista",
+    text: "Profissional dedicada ao planejamento ortodôntico, com olhar atento para função, estética e conforto em cada etapa do tratamento.",
+    image: "/images/dentista-placeholder.svg",
+  },
+  {
+    role: "Implantodontista",
+    text: "Especialista em implantodontia e reabilitação oral, conduzindo casos com planejamento cuidadoso e foco na segurança do paciente.",
+    image: "/images/dentista-placeholder.svg",
+  },
+  {
+    role: "Administração da clínica",
+    text: "Responsável por organizar a rotina da clínica, acolher os pacientes e acompanhar cada detalhe para uma experiência mais tranquila.",
+    image: "/images/clinica-placeholder.svg",
+  },
+  {
+    role: "Harmonização orofacial",
+    text: "Profissional voltada à harmonização orofacial, com abordagem individualizada e atenção à naturalidade dos resultados.",
+    image: "/images/dentista-placeholder.svg",
+  },
+  {
+    role: "Estética dental",
+    text: "Atua na estética do sorriso com cuidado para equilibrar saúde bucal, proporção, forma e naturalidade.",
+    image: "/images/dentista-placeholder.svg",
+  },
+  {
+    role: "Endodontista",
+    text: "Profissional dedicada à endodontia, realizando tratamentos de canal com atenção ao diagnóstico, conforto e preservação dos dentes.",
+    image: "/images/dentista-placeholder.svg",
+  },
+];
 ---
 
 <BaseLayout
@@ -43,6 +76,27 @@ const differentials = [
           <article class="feature-item">
             <h3>{item}</h3>
             <p>Uma abordagem pensada para unir saúde, estética e previsibilidade clínica.</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section team-section">
+    <div class="container">
+      <SectionTitle
+        eyebrow="Equipe"
+        title="Profissionais preparados para cuidar de diferentes necessidades do seu sorriso"
+        text="A Odonto Levek reúne especialidades complementares para orientar cada paciente com clareza desde a avaliação."
+      />
+      <div class="team-grid">
+        {team.map((member) => (
+          <article class="team-card">
+            <img src={member.image} width="720" height="480" alt={`Foto da equipe: ${member.role}`} loading="lazy" />
+            <div class="team-card-body">
+              <h3>{member.role}</h3>
+              <p>{member.text}</p>
+            </div>
           </article>
         ))}
       </div>

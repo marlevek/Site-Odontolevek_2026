@@ -15,7 +15,7 @@ const initialMessages = [
 ];
 
 const businessHours =
-  "Os horários de atendimento são: segunda-feira das 08:00 às 11:30 e das 13:30 às 18:30; terça-feira das 08:00 às 11:30 e das 13:30 às 18:30; quarta-feira das 08:00 às 11:30; quinta-feira das 13:30 às 18:30; sexta-feira das 08:00 às 11:30 e das 13:30 às 18:30. Sábado e domingo fechado.";
+  "Os horários de atendimento são: segunda-feira, terça-feira e sexta-feira das 08:00 às 11:30 e das 13:30 às 18:30; quarta-feira e quinta-feira das 08:00 às 11:30. Sábado e domingo fechado.";
 
 function normalizeText(text) {
   return text

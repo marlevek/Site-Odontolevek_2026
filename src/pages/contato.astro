@@ -29,6 +29,11 @@ const crumbs = [{ label: "Contato", href: "/contato/" }];
           <li><strong>WhatsApp:</strong> {siteConfig.whatsapp}</li>
           <li><strong>Endereço:</strong> {siteConfig.address}</li>
           <li><strong>Cidade:</strong> {siteConfig.city} - {siteConfig.state}</li>
+          <li>
+            <strong>Horário:</strong>
+            <span>{siteConfig.businessHoursLines[0]}</span>
+            <span>{siteConfig.businessHoursLines[1]}</span>
+          </li>
           <li><strong>CRO:</strong> {siteConfig.cro}</li>
         </ul>
         <div class="button-row" style="margin-top: 22px;">
@@ -41,8 +46,21 @@ const crumbs = [{ label: "Contato", href: "/contato/" }];
           >
             Tirar uma dúvida
           </a>
+          <a class="button button-secondary" href={siteConfig.googleMapsUrl} target="_blank" rel="noopener">
+            Abrir no mapa
+          </a>
         </div>
       </aside>
+      <figure class="contact-photo">
+        <img
+          src="/images/Imagens_Clinica/estaciionamento.jpg"
+          width="1381"
+          height="1036"
+          alt="Estacionamento amplo próximo à Odonto Levek"
+          loading="lazy"
+        />
+        <figcaption>Estacionamento amplo para facilitar sua chegada.</figcaption>
+      </figure>
     </div>
   </section>
 

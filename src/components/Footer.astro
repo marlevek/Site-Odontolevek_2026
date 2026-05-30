@@ -22,6 +22,7 @@ import { treatments } from "../data/treatments";
         <li>{siteConfig.address}</li>
         <li>{siteConfig.city} - {siteConfig.state}</li>
         <li>CRO: {siteConfig.cro}</li>
+        {siteConfig.businessHoursLines.map((line) => <li>{line}</li>)}
       </ul>
     </section>
 
