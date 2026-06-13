@@ -26,17 +26,17 @@ const team = [
   {
     role: "Implantodontista",
     text: "Especialista em implantodontia e reabilitação oral, conduzindo casos com planejamento cuidadoso e foco na segurança do paciente.",
-    image: "/images/dentista-placeholder.svg",
+    image: "/images/Imagens_Clinica/impante.jpg",
   },
   {
-    role: "Administração da clínica",
+    role: "Equipe",
     text: "Responsável por organizar a rotina da clínica, acolher os pacientes e acompanhar cada detalhe para uma experiência mais tranquila.",
-    image: "/images/clinica-placeholder.svg",
+    image: "/images/fotos_equipe/IMG-20260612-WA0014.jpg",
   },
   {
     role: "Harmonização orofacial",
     text: "Profissional voltada à harmonização orofacial, com abordagem individualizada e atenção à naturalidade dos resultados.",
-    image: "/images/dentista-placeholder.svg",
+    image: "/images/fotos_equipe/IMG-20260612-WA0011.jpg",
   },
   {
     role: "Estética dental",
@@ -47,6 +47,37 @@ const team = [
     role: "Endodontista",
     text: "Profissional dedicada à endodontia, realizando tratamentos de canal com atenção ao diagnóstico, conforto e preservação dos dentes.",
     image: "/images/dentista-placeholder.svg",
+  },
+];
+
+const clinicRoutine = [
+  {
+    src: "/images/Imagens_Clinica/IMG-20260612-WA0010.jpg",
+    width: 720,
+    height: 1280,
+    alt: "Detalhe de acolhimento preparado para pacientes da Odonto Levek",
+    caption: "Acolhimento nos detalhes",
+  },
+  {
+    src: "/images/Imagens_Clinica/IMG-20260612-WA0024.jpg",
+    width: 960,
+    height: 1280,
+    alt: "Recepção da Odonto Levek",
+    caption: "Recepção",
+  },
+  {
+    src: "/images/Imagens_Clinica/scanner_digital.jpg",
+    width: 2130,
+    height: 1597,
+    alt: "Scanner digital utilizado na clínica Odonto Levek",
+    caption: "Apoio tecnológico",
+  },
+  {
+    src: "/images/fotos_equipe/IMG-20260612-WA0017.jpg",
+    width: 1280,
+    height: 960,
+    alt: "Profissionais da Odonto Levek em foto de equipe",
+    caption: "Profissionais da clínica",
   },
 ];
 ---
@@ -92,12 +123,30 @@ const team = [
       <div class="team-grid">
         {team.map((member) => (
           <article class="team-card">
-            <img src={member.image} width="720" height="480" alt={`Foto da equipe: ${member.role}`} loading="lazy" />
+            <img src={member.image} width="720" height="480" alt={`Imagem relacionada à equipe: ${member.role}`} loading="lazy" />
             <div class="team-card-body">
               <h3>{member.role}</h3>
               <p>{member.text}</p>
             </div>
           </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section routine-section">
+    <div class="container">
+      <SectionTitle
+        eyebrow="Rotina da clínica"
+        title="Detalhes reais do atendimento, da equipe e dos ambientes"
+        text="Alguns registros mostram a rotina da Odonto Levek por dentro: equipe presente, espaços organizados e recursos que apoiam o cuidado."
+      />
+      <div class="routine-grid">
+        {clinicRoutine.map((item) => (
+          <figure class="routine-card">
+            <img src={item.src} width={item.width} height={item.height} alt={item.alt} loading="lazy" decoding="async" />
+            <figcaption>{item.caption}</figcaption>
+          </figure>
         ))}
       </div>
     </div>
